@@ -2,4 +2,3 @@ psycopg2
 pandas
 yfinance
 datetime
-os
