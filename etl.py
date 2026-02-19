@@ -42,10 +42,10 @@ final_df = final_df[["Symbol", "date", "open", "high", "low", "close", "volume"]
 data = final_df.to_dict(orient="records")
 
 conn = psycopg2.connect(
-    host=os.environ['SUPABASE_HOST'],
-    database=os.environ['SUPABASE_DATABASE'],
-    user=os.environ['SUPABASE_USER'],
-    password=os.environ['SUPABASE_PASSWORD'],
+    host=os.environ["SUPABASE_HOST"],
+    database=os.environ["SUPABASE_DATABASE"],
+    user=os.environ["SUPABASE_USER"],
+    password=os.environ["SUPABASE_PASSWORD"],
     port=5432
 )
 
