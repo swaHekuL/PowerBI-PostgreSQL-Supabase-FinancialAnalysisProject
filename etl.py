@@ -1,7 +1,7 @@
 import psycopg2
 import pandas as pd
 import yfinance as yf
-import datetime
+from datetime import date, timedelta
 import os
 
 # --- CONFIG ---
