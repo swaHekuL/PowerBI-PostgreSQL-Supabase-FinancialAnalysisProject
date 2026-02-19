@@ -2,6 +2,7 @@ import psycopg2
 import pandas as pd
 import yfinance as yf
 import datetime
+import os
 from datetime import date, timedelta
 
 # --- CONFIG ---
@@ -42,10 +43,10 @@ final_df = final_df[["Symbol", "date", "open", "high", "low", "close", "volume"]
 data = final_df.to_dict(orient="records")
 
 conn = psycopg2.connect(
-    host="db.dkyanwdugngpflpwjcmw.supabase.co",
-    database="postgres",
-    user="postgres",
-    password="Shikamaru2580*",
+    host=os.environ['SUPABASE_HOST'],
+    database=os.environ['SUPAHOST_DATABASE'],
+    user=os.environ['SUPAHOST_USER'],
+    password=os.environ['SUPAHOST_PASSWORD'],
     port=5432
 )
 
@@ -70,3 +71,4 @@ for row in data:
 conn.commit()
 cur.close()
 conn.close()
+
